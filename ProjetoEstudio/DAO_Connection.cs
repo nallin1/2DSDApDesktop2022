@@ -17,7 +17,6 @@ namespace ProjetoEstudio
             try
             {
                 con = new MySqlConnection("server=" + local + ";User ID=" + user + ";database=" + banco + ";password=" + senha);
-                con.Open();
                 retorno = true;
             }
             catch (Exception e)
@@ -37,7 +36,32 @@ namespace ProjetoEstudio
                 MySqlDataReader resultado = login.ExecuteReader();
                 if (resultado.Read())
                 {
-                    tipo = Convert.ToInt32(resultado["tipo"].ToString());
+                    tipo = Convert.ToInt32(resultado["tipo"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                con.Close();
+            }
+            finally
+            {
+                con.Close();
+            }
+            return tipo;
+        }
+
+        public static Boolean cadastrarUsuario(String usuario, String senha)
+        {
+            int tipo = 0;
+            try
+            {
+                con.Open();
+                MySqlCommand login = new MySqlCommand("Select * from Estudio_Login where usuario ='" + usuario + "' and senha ='" + senha + "'", con);
+                MySqlDataReader resultado = login.ExecuteReader();
+                if (resultado.Read())
+                {
+                    tipo = Convert.ToInt32(resultado["tipo"]);
                 }
             }
             catch (Exception ex)

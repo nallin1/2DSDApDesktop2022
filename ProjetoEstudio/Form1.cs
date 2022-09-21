@@ -35,12 +35,23 @@ namespace ProjetoEstudio
                 MessageBox.Show("Usuário/senha inválidas");
             } else if (tipo == 1){
                 MessageBox.Show("Usuário ADM");
-                grpLogin.Visible = true;
+                grpLogin.Visible = false;
+                menuStrip1.Enabled = true;
             } else if (tipo == 2)
             {
                 MessageBox.Show("Usuário restrito");
                 grpLogin.Visible = false;
+                menuStrip1.Enabled = true;
+                cadastrarLoginToolStripMenuItem.Enabled = false;
             }
+        }
+
+        private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuario cad_Login = new CadastroUsuario();
+            cad_Login.MdiParent = this;
+            cad_Login.WindowState = FormWindowState.Maximized;
+            cad_Login.Show();
         }
     }
 }

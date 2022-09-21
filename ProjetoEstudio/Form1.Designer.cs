@@ -31,18 +31,22 @@ namespace ProjetoEstudio
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.senhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.grpLogin = new System.Windows.Forms.GroupBox();
-            this.lbllogin = new System.Windows.Forms.Label();
-            this.lblsenha = new System.Windows.Forms.Label();
             this.btnlogar = new System.Windows.Forms.Button();
+            this.lblsenha = new System.Windows.Forms.Label();
+            this.lbllogin = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.grpLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Enabled = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -53,9 +57,32 @@ namespace ProjetoEstudio
             // 
             // arquivoToolStripMenuItem
             // 
+            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarAlunoToolStripMenuItem,
+            this.cadastrarLoginToolStripMenuItem,
+            this.senhaToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // cadastrarAlunoToolStripMenuItem
+            // 
+            this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
+            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
+            // 
+            // cadastrarLoginToolStripMenuItem
+            // 
+            this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
+            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
+            this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
+            // 
+            // senhaToolStripMenuItem
+            // 
+            this.senhaToolStripMenuItem.Name = "senhaToolStripMenuItem";
+            this.senhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.senhaToolStripMenuItem.Text = "Sair";
             // 
             // textBox1
             // 
@@ -86,14 +113,15 @@ namespace ProjetoEstudio
             this.grpLogin.TabStop = false;
             this.grpLogin.Text = "Validação";
             // 
-            // lbllogin
+            // btnlogar
             // 
-            this.lbllogin.AutoSize = true;
-            this.lbllogin.Location = new System.Drawing.Point(64, 93);
-            this.lbllogin.Name = "lbllogin";
-            this.lbllogin.Size = new System.Drawing.Size(36, 13);
-            this.lbllogin.TabIndex = 4;
-            this.lbllogin.Text = "Login:";
+            this.btnlogar.Location = new System.Drawing.Point(151, 176);
+            this.btnlogar.Name = "btnlogar";
+            this.btnlogar.Size = new System.Drawing.Size(161, 31);
+            this.btnlogar.TabIndex = 6;
+            this.btnlogar.Text = "Logar";
+            this.btnlogar.UseVisualStyleBackColor = true;
+            this.btnlogar.Click += new System.EventHandler(this.btnlogar_Click);
             // 
             // lblsenha
             // 
@@ -104,15 +132,14 @@ namespace ProjetoEstudio
             this.lblsenha.TabIndex = 5;
             this.lblsenha.Text = "Senha:";
             // 
-            // btnlogar
+            // lbllogin
             // 
-            this.btnlogar.Location = new System.Drawing.Point(151, 176);
-            this.btnlogar.Name = "btnlogar";
-            this.btnlogar.Size = new System.Drawing.Size(161, 31);
-            this.btnlogar.TabIndex = 6;
-            this.btnlogar.Text = "Logar";
-            this.btnlogar.UseVisualStyleBackColor = true;
-            this.btnlogar.Click += new System.EventHandler(this.btnlogar_Click);
+            this.lbllogin.AutoSize = true;
+            this.lbllogin.Location = new System.Drawing.Point(64, 93);
+            this.lbllogin.Name = "lbllogin";
+            this.lbllogin.Size = new System.Drawing.Size(36, 13);
+            this.lbllogin.TabIndex = 4;
+            this.lbllogin.Text = "Login:";
             // 
             // Form1
             // 
@@ -144,6 +171,9 @@ namespace ProjetoEstudio
         private System.Windows.Forms.Button btnlogar;
         private System.Windows.Forms.Label lblsenha;
         private System.Windows.Forms.Label lbllogin;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarAlunoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarLoginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem senhaToolStripMenuItem;
     }
 }
 

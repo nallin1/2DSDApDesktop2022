@@ -44,6 +44,11 @@ namespace ProjetoEstudio
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            Aluno aluno = new Aluno(txtCPF.Text, txtNome.Text, txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtComple)
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -39,7 +39,22 @@ namespace ProjetoEstudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int tipo_usuario = 0;
+            if(comboBox1.SelectedIndex == 0)
+            {
+                tipo_usuario = 1;  // posição 1 combo box => adm
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+                tipo_usuario = 2;  // posição 1 combo box => usuario
+            }
+            if (DAO_Connection.CadLogin(this.textBox1.Text, this.textBox2.Text, tipo_usuario))
+            {
+                MessageBox.Show("CADASTRO EFETUADO COM SUCESSO !");
+            } else
+            {
+                MessageBox.Show("Erro ao cadastrar...");
+            }
         }
     }
 }

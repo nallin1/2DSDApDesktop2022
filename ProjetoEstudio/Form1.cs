@@ -53,5 +53,13 @@ namespace ProjetoEstudio
             cad_Login.WindowState = FormWindowState.Maximized;
             cad_Login.Show();
         }
+
+        private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroAluno cad_aluno = new CadastroAluno();
+            cad_aluno.MdiParent = this;
+            cad_aluno.WindowState = FormWindowState.Maximized;
+            cad_aluno.Show();
+        }
     }
 }

@@ -70,6 +70,7 @@ namespace ProjetoEstudio
             this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
             this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
+            this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click);
             // 
             // cadastrarLoginToolStripMenuItem
             // 

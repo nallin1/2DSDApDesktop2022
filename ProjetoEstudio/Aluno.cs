@@ -66,7 +66,7 @@ namespace ProjetoEstudio
             try
             {
                 DAO_Connection.con.Open();
-                MySqlCommand insert = new MySqlCommand("INSERT INTO cl201239.Estudio_Aluno (CPFAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno, nomeAluno) VALUES ('" + CPF + "', '" + rua + "', '" + numero + "', '" + bairro + "', '" + complemento + "', '" + CEP + "', '" + cidade + "', '" + estado + "', '" + telefone + "', '" + email + "', '" + "', '" + nome, DAO_Connection.con);
+                MySqlCommand insert = new MySqlCommand("INSERT INTO cl201239.Estudio_Aluno (CPFAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno, nomeAluno) VALUES ('" + CPF + "', '" + rua + "', '" + numero + "', '" + bairro + "', '" + complemento + "', '" + CEP + "', '" + cidade + "', '" + estado + "', '" + telefone + "', '" + email + "', '" + nome + "')", DAO_Connection.con);
                 insert.ExecuteNonQuery();
                 checkCadAluno = true;
             } catch (Exception ex)

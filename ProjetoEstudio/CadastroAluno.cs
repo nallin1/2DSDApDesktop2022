@@ -44,7 +44,15 @@ namespace ProjetoEstudio
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno(txtCPF.Text, txtNome.Text, txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtComple)
+            Aluno aluno = new Aluno(txtCPF.Text, txtNome.Text, txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtComplemento.Text, txtCEP.Text, txtCidade.Text, txtEstado.Text, txtTelefone.Text, txtEmail.Text, true);
+            if(aluno.cadAluno())
+            {
+                MessageBox.Show("Aluno cadastrado com sucesso");
+            } else
+            {
+                MessageBox.Show("Erro ao cadastrar aluno...");
+            }
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

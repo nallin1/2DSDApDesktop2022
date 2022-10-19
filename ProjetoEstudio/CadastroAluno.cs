@@ -59,5 +59,20 @@ namespace ProjetoEstudio
         {
 
         }
+
+        private void CadastroAluno_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

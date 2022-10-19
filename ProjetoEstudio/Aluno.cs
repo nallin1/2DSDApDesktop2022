@@ -54,6 +54,55 @@ namespace ProjetoEstudio
             this.email = email;
             this.ativo = ativo;
         }
+        public Aluno(String cpf)
+        {
+            DAO_Connection.getConnection("143.106.241.3", "cl201239", "cl201239", "cl*13072005");
+            this.CPF = cpf;
+        }
+        public bool excluirAluno()
+        {
+            bool exclusao = false;
+            try
+            {
+                DAO_Connection.con.Open();
+                MySqlCommand excluirQuery = new MySqlCommand("update Estudio_Aluno set ativo=1 where CPFAluno='" + CPF + "'", DAO_Connection.con);
+                excluirQuery.ExecuteNonQuery();
+                exclusao = true;
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Connection.con.Close();
+            }
+            return exclusao;
+        }
+
+
+        public bool consultarAluno()
+        {
+            bool existe = false;
+                try
+            {
+                DAO_Connection.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + CPF + "'", DAO_Connection.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Connection.con.Close();
+            }
+            return existe;
+        }
 
         public Aluno()
         {

@@ -40,6 +40,7 @@ namespace ProjetoEstudio
             this.btnlogar = new System.Windows.Forms.Button();
             this.lblsenha = new System.Windows.Forms.Label();
             this.lbllogin = new System.Windows.Forms.Label();
+            this.excluirAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpLogin.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +60,7 @@ namespace ProjetoEstudio
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarAlunoToolStripMenuItem,
+            this.excluirAlunoToolStripMenuItem,
             this.cadastrarLoginToolStripMenuItem,
             this.senhaToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
@@ -91,6 +93,7 @@ namespace ProjetoEstudio
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(230, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "maria";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
@@ -99,6 +102,7 @@ namespace ProjetoEstudio
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(230, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "222";
             // 
             // grpLogin
             // 
@@ -142,6 +146,13 @@ namespace ProjetoEstudio
             this.lbllogin.TabIndex = 4;
             this.lbllogin.Text = "Login:";
             // 
+            // excluirAlunoToolStripMenuItem
+            // 
+            this.excluirAlunoToolStripMenuItem.Name = "excluirAlunoToolStripMenuItem";
+            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirAlunoToolStripMenuItem.Text = "ExcluirAluno";
+            this.excluirAlunoToolStripMenuItem.Click += new System.EventHandler(this.excluirAlunoToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +164,7 @@ namespace ProjetoEstudio
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Estudio";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpLogin.ResumeLayout(false);
@@ -175,6 +187,7 @@ namespace ProjetoEstudio
         private System.Windows.Forms.ToolStripMenuItem cadastrarAlunoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem senhaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirAlunoToolStripMenuItem;
     }
 }
 

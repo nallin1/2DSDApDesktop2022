@@ -30,6 +30,9 @@ namespace ProjetoEstudio
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddFoto = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
@@ -52,13 +55,13 @@ namespace ProjetoEstudio
             this.lblEndereco = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAddFoto);
+            this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Controls.Add(this.txtComplemento);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.txtEstado);
@@ -84,10 +87,36 @@ namespace ProjetoEstudio
             this.groupBox1.Controls.Add(this.lblCPF);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(612, 299);
+            this.groupBox1.Size = new System.Drawing.Size(847, 296);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Cadastrais";
+            // 
+            // btnAddFoto
+            // 
+            this.btnAddFoto.Location = new System.Drawing.Point(629, 257);
+            this.btnAddFoto.Name = "btnAddFoto";
+            this.btnAddFoto.Size = new System.Drawing.Size(188, 23);
+            this.btnAddFoto.TabIndex = 27;
+            this.btnAddFoto.Text = "Add Foto";
+            this.btnAddFoto.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(629, 19);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(188, 232);
+            this.listView1.TabIndex = 26;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(418, 149);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(180, 20);
+            this.txtComplemento.TabIndex = 25;
             // 
             // txtEmail
             // 
@@ -209,6 +238,7 @@ namespace ProjetoEstudio
             this.txtCPF.Size = new System.Drawing.Size(182, 20);
             this.txtCPF.TabIndex = 7;
             this.txtCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // btnCadastrar
             // 
@@ -277,21 +307,15 @@ namespace ProjetoEstudio
             this.lblCPF.TabIndex = 0;
             this.lblCPF.Text = "CPF:";
             // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(418, 149);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(180, 20);
-            this.txtComplemento.TabIndex = 25;
-            // 
             // CadastroAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 389);
+            this.ClientSize = new System.Drawing.Size(873, 318);
             this.Controls.Add(this.groupBox1);
             this.Name = "CadastroAluno";
             this.Text = "CadastroAluno";
+            this.Load += new System.EventHandler(this.CadastroAluno_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -304,7 +328,6 @@ namespace ProjetoEstudio
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblCPF;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lblCEP;
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.MaskedTextBox txtCPF;
@@ -325,5 +348,7 @@ namespace ProjetoEstudio
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnAddFoto;
     }
 }

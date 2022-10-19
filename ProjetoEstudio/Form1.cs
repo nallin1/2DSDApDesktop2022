@@ -61,5 +61,16 @@ namespace ProjetoEstudio
             cad_aluno.WindowState = FormWindowState.Maximized;
             cad_aluno.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExcluirAluno excluirAluno = new ExcluirAluno();
+            excluirAluno.Show();
+        }
     }
 }

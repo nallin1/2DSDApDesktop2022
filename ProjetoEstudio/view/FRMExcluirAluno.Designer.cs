@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoEstudio
 {
-    partial class ExcluirAluno
+    partial class FRMExcluirAluno
     {
         /// <summary>
         /// Required designer variable.

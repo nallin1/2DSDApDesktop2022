@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoEstudio
 {
-    public partial class ExcluirAluno : Form
+    public partial class FRMExcluirAluno : Form
     {
-        public ExcluirAluno()
+        public FRMExcluirAluno()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoEstudio
 {
-    partial class CadastroUsuario
+    partial class FRMCadastroUsuario
     {
         /// <summary>
         /// Required designer variable.

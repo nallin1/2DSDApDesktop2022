@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoEstudio
 {
-    partial class Form1
+    partial class FRMLoginEstudio
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -31,8 +31,6 @@ namespace ProjetoEstudio
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.senhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -40,7 +38,12 @@ namespace ProjetoEstudio
             this.btnlogar = new System.Windows.Forms.Button();
             this.lblsenha = new System.Windows.Forms.Label();
             this.lbllogin = new System.Windows.Forms.Label();
-            this.excluirAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarAlunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirAlunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarModalidadeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpLogin.SuspendLayout();
             this.SuspendLayout();
@@ -59,32 +62,17 @@ namespace ProjetoEstudio
             // arquivoToolStripMenuItem
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarAlunoToolStripMenuItem,
-            this.excluirAlunoToolStripMenuItem,
-            this.cadastrarLoginToolStripMenuItem,
+            this.modalidadeToolStripMenuItem,
+            this.alunoToolStripMenuItem,
             this.senhaToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
-            // cadastrarAlunoToolStripMenuItem
-            // 
-            this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
-            this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click);
-            // 
-            // cadastrarLoginToolStripMenuItem
-            // 
-            this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
-            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
-            this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
-            // 
             // senhaToolStripMenuItem
             // 
             this.senhaToolStripMenuItem.Name = "senhaToolStripMenuItem";
-            this.senhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.senhaToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.senhaToolStripMenuItem.Text = "Sair";
             // 
             // textBox1
@@ -146,14 +134,53 @@ namespace ProjetoEstudio
             this.lbllogin.TabIndex = 4;
             this.lbllogin.Text = "Login:";
             // 
-            // excluirAlunoToolStripMenuItem
+            // alunoToolStripMenuItem
             // 
-            this.excluirAlunoToolStripMenuItem.Name = "excluirAlunoToolStripMenuItem";
-            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.excluirAlunoToolStripMenuItem.Text = "ExcluirAluno";
-            this.excluirAlunoToolStripMenuItem.Click += new System.EventHandler(this.excluirAlunoToolStripMenuItem_Click);
+            this.alunoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarAlunoToolStripMenuItem1,
+            this.excluirAlunoToolStripMenuItem1});
+            this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
+            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alunoToolStripMenuItem.Text = "Aluno";
             // 
-            // Form1
+            // cadastrarAlunoToolStripMenuItem1
+            // 
+            this.cadastrarAlunoToolStripMenuItem1.Name = "cadastrarAlunoToolStripMenuItem1";
+            this.cadastrarAlunoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarAlunoToolStripMenuItem1.Text = "Cadastrar Aluno";
+            this.cadastrarAlunoToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem1_Click);
+            // 
+            // excluirAlunoToolStripMenuItem1
+            // 
+            this.excluirAlunoToolStripMenuItem1.Name = "excluirAlunoToolStripMenuItem1";
+            this.excluirAlunoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.excluirAlunoToolStripMenuItem1.Text = "Excluir Aluno";
+            this.excluirAlunoToolStripMenuItem1.Click += new System.EventHandler(this.excluirAlunoToolStripMenuItem1_Click);
+            // 
+            // modalidadeToolStripMenuItem
+            // 
+            this.modalidadeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarModalidadeToolStripMenuItem1,
+            this.excluirModalidadeToolStripMenuItem});
+            this.modalidadeToolStripMenuItem.Name = "modalidadeToolStripMenuItem";
+            this.modalidadeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.modalidadeToolStripMenuItem.Text = "Modalidade";
+            // 
+            // cadastrarModalidadeToolStripMenuItem1
+            // 
+            this.cadastrarModalidadeToolStripMenuItem1.Name = "cadastrarModalidadeToolStripMenuItem1";
+            this.cadastrarModalidadeToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.cadastrarModalidadeToolStripMenuItem1.Text = "Cadastrar Modalidade";
+            this.cadastrarModalidadeToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarModalidadeToolStripMenuItem1_Click);
+            // 
+            // excluirModalidadeToolStripMenuItem
+            // 
+            this.excluirModalidadeToolStripMenuItem.Name = "excluirModalidadeToolStripMenuItem";
+            this.excluirModalidadeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.excluirModalidadeToolStripMenuItem.Text = "Excluir Modalidade";
+            this.excluirModalidadeToolStripMenuItem.Click += new System.EventHandler(this.excluirModalidadeToolStripMenuItem_Click);
+            // 
+            // FRMLoginEstudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +189,7 @@ namespace ProjetoEstudio
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FRMLoginEstudio";
             this.Text = "Estudio";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -184,10 +211,13 @@ namespace ProjetoEstudio
         private System.Windows.Forms.Button btnlogar;
         private System.Windows.Forms.Label lblsenha;
         private System.Windows.Forms.Label lbllogin;
-        private System.Windows.Forms.ToolStripMenuItem cadastrarAlunoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastrarLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem senhaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem excluirAlunoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modalidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarModalidadeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem excluirModalidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alunoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarAlunoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem excluirAlunoToolStripMenuItem1;
     }
 }
 

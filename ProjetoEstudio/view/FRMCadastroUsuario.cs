@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoEstudio
 {
-    public partial class CadastroUsuario : Form
+    public partial class FRMCadastroUsuario : Form
     {
-        public CadastroUsuario()
+        public FRMCadastroUsuario()
         {
             InitializeComponent();
         }

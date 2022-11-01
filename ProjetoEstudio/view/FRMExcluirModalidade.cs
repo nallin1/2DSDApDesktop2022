@@ -37,9 +37,9 @@ namespace ProjetoEstudio.view
             DAO_Connection.con.Open();
             MySqlCommand selectDesc = new MySqlCommand("Select descricaoModalidade from Estudio_Modalidade where ativa=1", DAO_Connection.con);
             MySqlDataReader res = selectDesc.ExecuteReader();
+            cbModalidade.Items.Clear();
             while (res.Read())
             {
-                cbModalidade.Items.Clear();
                 cbModalidade.Items.Add(res.GetString("descricaoModalidade"));
                 cbModalidade.Text = res[0].ToString();
             }

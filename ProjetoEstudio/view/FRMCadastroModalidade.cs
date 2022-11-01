@@ -33,5 +33,10 @@ namespace ProjetoEstudio
                 MessageBox.Show("Erro ao cadastrar modalidade...");
             }
         }
+
+        private void FRMCadastroModalidade_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -83,5 +83,18 @@ namespace ProjetoEstudio
             excluirAluno.WindowState = FormWindowState.Maximized;
             excluirAluno.Show();
         }
+
+        private void consultarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMConsultarModalidade consultarModalidade = new FRMConsultarModalidade();
+            consultarModalidade.MdiParent = this;
+            consultarModalidade.WindowState = FormWindowState.Maximized;
+            consultarModalidade.Show();
+        }
+
+        private void grpLogin_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -69,6 +69,12 @@
       <DependentUpon>FRMCadastroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="model\dao\DAO_Connection.cs" />
+    <Compile Include="view\FRMConsultarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FRMConsultarModalidade.Designer.cs">
+      <DependentUpon>FRMConsultarModalidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FRMExcluirAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\FRMCadastroUsuario.resx">
       <DependentUpon>FRMCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FRMConsultarModalidade.resx">
+      <DependentUpon>FRMConsultarModalidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FRMExcluirAluno.resx">
       <DependentUpon>FRMExcluirAluno.cs</DependentUpon>

@@ -121,7 +121,6 @@ namespace ProjetoEstudio
             } catch (Exception ex)
             {
                 Console.WriteLine("Erro: ", ex.ToString());
-                DAO_Connection.con.Close();
             } finally 
             {
                 DAO_Connection.con.Close();

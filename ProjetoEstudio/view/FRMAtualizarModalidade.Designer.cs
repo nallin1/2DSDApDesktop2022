@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoEstudio.view
 {
-    partial class FRMConsultarModalidade
+    partial class FRMAtualizarModalidade
     {
         /// <summary>
         /// Required designer variable.
@@ -57,9 +57,9 @@ namespace ProjetoEstudio.view
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(602, 259);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Consultar Modalidade";
+            this.groupBox1.Text = "Atualizar Modalidade";
             // 
             // btnAtualizarConsulta
             // 
@@ -69,9 +69,8 @@ namespace ProjetoEstudio.view
             this.btnAtualizarConsulta.Name = "btnAtualizarConsulta";
             this.btnAtualizarConsulta.Size = new System.Drawing.Size(522, 35);
             this.btnAtualizarConsulta.TabIndex = 6;
-            this.btnAtualizarConsulta.Text = "Consultar";
+            this.btnAtualizarConsulta.Text = "Atualizar Modalidade";
             this.btnAtualizarConsulta.UseVisualStyleBackColor = false;
-            this.btnAtualizarConsulta.Click += new System.EventHandler(this.btnAtualizarConsulta_Click);
             // 
             // cbModalidade
             // 
@@ -80,6 +79,7 @@ namespace ProjetoEstudio.view
             this.cbModalidade.Name = "cbModalidade";
             this.cbModalidade.Size = new System.Drawing.Size(382, 28);
             this.cbModalidade.TabIndex = 5;
+            this.cbModalidade.SelectedValueChanged += new System.EventHandler(this.cbModalidade_SelectedValueChanged);
             // 
             // txtQtdAulas
             // 
@@ -141,16 +141,16 @@ namespace ProjetoEstudio.view
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição:";
             // 
-            // FRMConsultarModalidade
+            // FRMAtualizarModalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 284);
+            this.ClientSize = new System.Drawing.Size(620, 289);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FRMConsultarModalidade";
-            this.Text = "Consultar Modalidades";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FRMConsultarModalidade_FormClosed);
-            this.Load += new System.EventHandler(this.FRMConsultarModalidade_Load);
+            this.Name = "FRMAtualizarModalidade";
+            this.Text = "Atualizar Modalidade";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FRMAtualizarModalidade_FormClosed);
+            this.Load += new System.EventHandler(this.FRMAtualizarModalidade_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -160,6 +160,7 @@ namespace ProjetoEstudio.view
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAtualizarConsulta;
         private System.Windows.Forms.ComboBox cbModalidade;
         private System.Windows.Forms.TextBox txtQtdAulas;
         private System.Windows.Forms.TextBox txtQtdAlunos;
@@ -168,6 +169,5 @@ namespace ProjetoEstudio.view
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAtualizarConsulta;
     }
 }

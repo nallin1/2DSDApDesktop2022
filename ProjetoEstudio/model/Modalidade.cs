@@ -78,5 +78,30 @@ namespace ProjetoEstudio
             }
             return checkExModalidade;
         }
+
+        public void AtualizarModalidade()
+        {
+            bool checkUpdate = false;
+
+            try
+            {
+                DAO_Connection.con.Open();
+                StringBuilder sbQuery = new StringBuilder()
+                    .Append("update Estudio_Modalidade set precoModalidade='" + Preco + "',")
+                    .Append(" set qtdAlunos='" + Qtd_alunos + "',")
+                    .Append(" set qtdAulas='" + Qtd_aulas + "'")
+                    .Append(" where descricaoModalidade='" + Descricao + "'");
+
+                MySqlCommand atualizarQuery = new MySqlCommand(sbQuery.ToString(), DAO_Connection.con);
+                atualizarQuery.ExecuteNonQuery();
+                checkUpdate = true;
+            } catch (MySqlException ex)
+            {
+                Console.WriteLine("Erro ao atualizar modalidade... " + Descricao + "\n" + ex.ToString());
+            } finally
+            {
+                DAO_Connection.con.Close();
+            }
+        }
     }
 }

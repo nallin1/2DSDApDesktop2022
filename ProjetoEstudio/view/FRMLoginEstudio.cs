@@ -96,5 +96,13 @@ namespace ProjetoEstudio
         {
 
         }
+
+        private void atualizarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMAtualizarModalidade atualizarModalidade = new FRMAtualizarModalidade();
+            atualizarModalidade.MdiParent = this;
+            atualizarModalidade.WindowState = FormWindowState.Maximized;
+            atualizarModalidade.Show();
+        }
     }
 }

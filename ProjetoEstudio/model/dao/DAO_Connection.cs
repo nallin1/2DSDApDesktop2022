@@ -38,6 +38,7 @@ namespace ProjetoEstudio
                 {
                     tipo = Convert.ToInt32(resultado["tipo"]);
                 }
+                resultado.Close();
             }
             catch (Exception ex)
             {

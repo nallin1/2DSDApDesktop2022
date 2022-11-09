@@ -21,7 +21,7 @@ namespace ProjetoEstudio
         {
 
         }
-
+        /*
         private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             Aluno aluno = new Aluno(txtCPF.Text);
@@ -39,6 +39,31 @@ namespace ProjetoEstudio
                 }
             }
 
+        }
+        */
+        private void txtCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btnExcluirAluno_Click(object sender, EventArgs e)
+        {
+            Aluno aluno = new Aluno(mskCPFAluno.Text);
+
+            if (aluno.consultarAluno())
+            {
+                if (aluno.excluirAluno())
+                {
+                    MessageBox.Show("ALUNO EXCLUÍDO !!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir aluno...");
+                }
+            } else {
+                    MessageBox.Show("Aluno não encontrado :(");
+            }
+                    
         }
     }
 }

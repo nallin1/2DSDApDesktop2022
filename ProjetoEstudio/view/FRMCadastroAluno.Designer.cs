@@ -87,7 +87,7 @@ namespace ProjetoEstudio
             this.groupBox1.Controls.Add(this.lblCPF);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(847, 296);
+            this.groupBox1.Size = new System.Drawing.Size(847, 365);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Cadastrais";
@@ -96,7 +96,7 @@ namespace ProjetoEstudio
             // 
             this.btnAddFoto.Location = new System.Drawing.Point(629, 257);
             this.btnAddFoto.Name = "btnAddFoto";
-            this.btnAddFoto.Size = new System.Drawing.Size(188, 23);
+            this.btnAddFoto.Size = new System.Drawing.Size(188, 35);
             this.btnAddFoto.TabIndex = 27;
             this.btnAddFoto.Text = "Add Foto";
             this.btnAddFoto.UseVisualStyleBackColor = true;
@@ -242,12 +242,14 @@ namespace ProjetoEstudio
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.Lime;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnCadastrar.Location = new System.Drawing.Point(45, 256);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(483, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(553, 36);
             this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // lblTelefone
@@ -307,13 +309,13 @@ namespace ProjetoEstudio
             this.lblCPF.TabIndex = 0;
             this.lblCPF.Text = "CPF:";
             // 
-            // CadastroAluno
+            // FRMCadastroAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 318);
+            this.ClientSize = new System.Drawing.Size(873, 389);
             this.Controls.Add(this.groupBox1);
-            this.Name = "CadastroAluno";
+            this.Name = "FRMCadastroAluno";
             this.Text = "CadastroAluno";
             this.Load += new System.EventHandler(this.CadastroAluno_Load);
             this.groupBox1.ResumeLayout(false);

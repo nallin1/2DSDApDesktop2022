@@ -29,49 +29,75 @@ namespace ProjetoEstudio
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnExcluirAluno = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.mskCPFAluno = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtCPF
+            // groupBox1
             // 
-            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtCPF.Location = new System.Drawing.Point(147, 27);
-            this.txtCPF.Mask = "000.000.000-00";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(215, 29);
-            this.txtCPF.TabIndex = 0;
-            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox1_KeyPress);
+            this.groupBox1.Controls.Add(this.mskCPFAluno);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnExcluirAluno);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.groupBox1.Location = new System.Drawing.Point(28, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(474, 157);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Excluir Alunos";
+            // 
+            // btnExcluirAluno
+            // 
+            this.btnExcluirAluno.BackColor = System.Drawing.Color.Lime;
+            this.btnExcluirAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirAluno.Location = new System.Drawing.Point(26, 89);
+            this.btnExcluirAluno.Name = "btnExcluirAluno";
+            this.btnExcluirAluno.Size = new System.Drawing.Size(430, 42);
+            this.btnExcluirAluno.TabIndex = 0;
+            this.btnExcluirAluno.Text = "Excluir Aluno";
+            this.btnExcluirAluno.UseVisualStyleBackColor = false;
+            this.btnExcluirAluno.Click += new System.EventHandler(this.btnExcluirAluno_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(22, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 24);
+            this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CPF do Aluno";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "CPF do Aluno:";
             // 
-            // ExcluirAluno
+            // mskCPFAluno
+            // 
+            this.mskCPFAluno.Location = new System.Drawing.Point(145, 40);
+            this.mskCPFAluno.Mask = "000,000,000,00";
+            this.mskCPFAluno.Name = "mskCPFAluno";
+            this.mskCPFAluno.Size = new System.Drawing.Size(311, 26);
+            this.mskCPFAluno.TabIndex = 2;
+            // 
+            // FRMExcluirAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 82);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCPF);
+            this.ClientSize = new System.Drawing.Size(527, 198);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "ExcluirAluno";
+            this.Name = "FRMExcluirAluno";
             this.Text = "Excluir Aluno";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnExcluirAluno;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox mskCPFAluno;
     }
 }

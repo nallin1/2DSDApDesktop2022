@@ -65,7 +65,7 @@ namespace ProjetoEstudio
             try
             {
                 DAO_Connection.con.Open();
-                MySqlCommand excluirQuery = new MySqlCommand("update Estudio_Aluno set ativo=1 where CPFAluno='" + CPF + "'", DAO_Connection.con);
+                MySqlCommand excluirQuery = new MySqlCommand("update Estudio_Aluno set ativo=0 where CPFAluno like '" + CPF + "'", DAO_Connection.con);
                 excluirQuery.ExecuteNonQuery();
                 exclusao = true;
             } catch (Exception ex)
@@ -86,7 +86,7 @@ namespace ProjetoEstudio
                 try
             {
                 DAO_Connection.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + CPF + "'", DAO_Connection.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno like '" + CPF + "'", DAO_Connection.con);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {

@@ -54,5 +54,10 @@ namespace ProjetoEstudio.view
         {
             DAO_Connection.con.Close();
         }
+
+        private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

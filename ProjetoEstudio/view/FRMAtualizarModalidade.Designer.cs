@@ -30,7 +30,7 @@ namespace ProjetoEstudio.view
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAtualizarConsulta = new System.Windows.Forms.Button();
+            this.btnAtualizarModal = new System.Windows.Forms.Button();
             this.cbModalidade = new System.Windows.Forms.ComboBox();
             this.txtQtdAulas = new System.Windows.Forms.TextBox();
             this.txtQtdAlunos = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@ namespace ProjetoEstudio.view
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnAtualizarConsulta);
+            this.groupBox1.Controls.Add(this.btnAtualizarModal);
             this.groupBox1.Controls.Add(this.cbModalidade);
             this.groupBox1.Controls.Add(this.txtQtdAulas);
             this.groupBox1.Controls.Add(this.txtQtdAlunos);
@@ -61,16 +61,17 @@ namespace ProjetoEstudio.view
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Atualizar Modalidade";
             // 
-            // btnAtualizarConsulta
+            // btnAtualizarModal
             // 
-            this.btnAtualizarConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAtualizarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarConsulta.Location = new System.Drawing.Point(42, 188);
-            this.btnAtualizarConsulta.Name = "btnAtualizarConsulta";
-            this.btnAtualizarConsulta.Size = new System.Drawing.Size(522, 35);
-            this.btnAtualizarConsulta.TabIndex = 6;
-            this.btnAtualizarConsulta.Text = "Atualizar Modalidade";
-            this.btnAtualizarConsulta.UseVisualStyleBackColor = false;
+            this.btnAtualizarModal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAtualizarModal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarModal.Location = new System.Drawing.Point(42, 188);
+            this.btnAtualizarModal.Name = "btnAtualizarModal";
+            this.btnAtualizarModal.Size = new System.Drawing.Size(522, 35);
+            this.btnAtualizarModal.TabIndex = 6;
+            this.btnAtualizarModal.Text = "Atualizar Modalidade";
+            this.btnAtualizarModal.UseVisualStyleBackColor = false;
+            this.btnAtualizarModal.Click += new System.EventHandler(this.btnAtualizarModal_Click);
             // 
             // cbModalidade
             // 
@@ -85,7 +86,6 @@ namespace ProjetoEstudio.view
             // 
             this.txtQtdAulas.Location = new System.Drawing.Point(182, 149);
             this.txtQtdAulas.Name = "txtQtdAulas";
-            this.txtQtdAulas.ReadOnly = true;
             this.txtQtdAulas.Size = new System.Drawing.Size(382, 26);
             this.txtQtdAulas.TabIndex = 4;
             // 
@@ -93,7 +93,6 @@ namespace ProjetoEstudio.view
             // 
             this.txtQtdAlunos.Location = new System.Drawing.Point(182, 115);
             this.txtQtdAlunos.Name = "txtQtdAlunos";
-            this.txtQtdAlunos.ReadOnly = true;
             this.txtQtdAlunos.Size = new System.Drawing.Size(382, 26);
             this.txtQtdAlunos.TabIndex = 3;
             // 
@@ -101,7 +100,6 @@ namespace ProjetoEstudio.view
             // 
             this.txtPreco.Location = new System.Drawing.Point(182, 82);
             this.txtPreco.Name = "txtPreco";
-            this.txtPreco.ReadOnly = true;
             this.txtPreco.Size = new System.Drawing.Size(382, 26);
             this.txtPreco.TabIndex = 2;
             // 
@@ -149,8 +147,7 @@ namespace ProjetoEstudio.view
             this.Controls.Add(this.groupBox1);
             this.Name = "FRMAtualizarModalidade";
             this.Text = "Atualizar Modalidade";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FRMAtualizarModalidade_FormClosed);
-            this.Load += new System.EventHandler(this.FRMAtualizarModalidade_Load);
+            this.Load += new System.EventHandler(this.FRMAtualizarModalidade_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -160,7 +157,7 @@ namespace ProjetoEstudio.view
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnAtualizarConsulta;
+        private System.Windows.Forms.Button btnAtualizarModal;
         private System.Windows.Forms.ComboBox cbModalidade;
         private System.Windows.Forms.TextBox txtQtdAulas;
         private System.Windows.Forms.TextBox txtQtdAlunos;

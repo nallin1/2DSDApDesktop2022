@@ -80,6 +80,7 @@ namespace ProjetoEstudio.view
             this.cbModalidade.Name = "cbModalidade";
             this.cbModalidade.Size = new System.Drawing.Size(382, 28);
             this.cbModalidade.TabIndex = 5;
+            this.cbModalidade.SelectedIndexChanged += new System.EventHandler(this.cbModalidade_SelectedIndexChanged);
             // 
             // txtQtdAulas
             // 
@@ -145,7 +146,7 @@ namespace ProjetoEstudio.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 284);
+            this.ClientSize = new System.Drawing.Size(624, 286);
             this.Controls.Add(this.groupBox1);
             this.Name = "FRMConsultarModalidade";
             this.Text = "Consultar Modalidades";

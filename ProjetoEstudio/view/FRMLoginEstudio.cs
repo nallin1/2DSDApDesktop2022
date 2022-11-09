@@ -38,12 +38,14 @@ namespace ProjetoEstudio
                 MessageBox.Show("Usuário ADM");
                 grpLogin.Visible = false;
                 menuStrip1.Enabled = true;
+                //DAO_Connection.con.Close();
             } else if (tipo == 2)
             {
                 MessageBox.Show("Usuário restrito");
                 grpLogin.Visible = false;
                 menuStrip1.Enabled = true;
                 cadastrarAlunoToolStripMenuItem1.Enabled = false;
+                //DAO_Connection.con.Close();
             }
         }
 

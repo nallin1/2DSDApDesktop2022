@@ -92,6 +92,7 @@ namespace ProjetoEstudio
                 {
                     existe = true;
                 }
+                resultado.Close();
             }
             catch (Exception ex)
             {

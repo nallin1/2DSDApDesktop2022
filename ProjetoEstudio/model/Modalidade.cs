@@ -10,12 +10,12 @@ namespace ProjetoEstudio
     class Modalidade
     {
         private String descricao;
-        private float preco;
+        private double preco;
         private int qtd_alunos;
         private int qtd_aulas;
 
         public string Descricao { get => descricao; set => descricao = value; }
-        public float Preco { get => preco; set => preco = value; }
+        public double Preco { get => preco; set => preco = value; }
         public int Qtd_alunos { get => qtd_alunos; set => qtd_alunos = value; }
         public int Qtd_aulas { get => qtd_aulas; set => qtd_aulas = value; }
 
@@ -27,10 +27,18 @@ namespace ProjetoEstudio
             this.descricao = descricao;
         }
 
-        public Modalidade(string descricao, float preco, int qtd_alunos, int qtd_aulas)
+        public Modalidade(string descricao, double preco, int qtd_alunos, int qtd_aulas)
         {
             DAO_Connection.getConnection("143.106.241.3", "cl201239", "cl201239", "cl*13072005");
             this.descricao = descricao;
+            this.preco = preco;
+            this.qtd_alunos = qtd_alunos;
+            this.qtd_aulas = qtd_aulas;
+        }
+
+        public Modalidade(double preco, int qtd_alunos, int qtd_aulas)
+        {
+            DAO_Connection.getConnection("143.106.241.3", "cl201239", "cl201239", "cl*13072005");
             this.preco = preco;
             this.qtd_alunos = qtd_alunos;
             this.qtd_aulas = qtd_aulas;
@@ -79,20 +87,16 @@ namespace ProjetoEstudio
             return checkExModalidade;
         }
 
-        public void AtualizarModalidade()
+        public bool AtualizarModalidade()
         {
             bool checkUpdate = false;
 
             try
             {
                 DAO_Connection.con.Open();
-                StringBuilder sbQuery = new StringBuilder()
-                    .Append("update Estudio_Modalidade set precoModalidade='" + Preco + "',")
-                    .Append(" set qtdAlunos='" + Qtd_alunos + "',")
-                    .Append(" set qtdAulas='" + Qtd_aulas + "'")
-                    .Append(" where descricaoModalidade='" + Descricao + "'");
+                String query = "UPDATE Estudio_Modalidade set precoModalidade=" + Preco + ", qtdAlunos=" + Qtd_alunos + ", qtdAulas=" + Qtd_aulas + " where descricaoModalidade like '" + Descricao + "'";
 
-                MySqlCommand atualizarQuery = new MySqlCommand(sbQuery.ToString(), DAO_Connection.con);
+                MySqlCommand atualizarQuery = new MySqlCommand(query.ToString(), DAO_Connection.con);
                 atualizarQuery.ExecuteNonQuery();
                 checkUpdate = true;
             } catch (MySqlException ex)
@@ -101,7 +105,9 @@ namespace ProjetoEstudio
             } finally
             {
                 DAO_Connection.con.Close();
+                
             }
+            return checkUpdate;
         }
     }
 }

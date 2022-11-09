@@ -18,60 +18,64 @@ namespace ProjetoEstudio.view
             InitializeComponent();
         }
 
-        private void btnAtualizarMod_Click(object sender, EventArgs e)
+        private void FRMAtualizarModalidade_Load_1(object sender, EventArgs e)
         {
+            populateComboBox();
 
+            
         }
 
-        private void FRMAtualizarModalidade_Load(object sender, EventArgs e)
+        public void populateComboBox()
         {
             DAO_Connection.con.Open();
-            MySqlCommand selectDesc = new MySqlCommand("Select descricaoModalidade from Estudio_Modalidade where ativa=1", DAO_Connection.con);
-            using (MySqlDataReader res = selectDesc.ExecuteReader())
+            MySqlCommand updateCmd = new MySqlCommand("select descricaoModalidade from Estudio_Modalidade where ativa=1", DAO_Connection.con);
+            MySqlDataReader updateDataReader = updateCmd.ExecuteReader();
+
+            while (updateDataReader.Read())
             {
-                cbModalidade.Items.Clear();
-                while (res.Read())
-                {
-                    cbModalidade.Items.Add(res.GetString("descricaoModalidade"));
-                    cbModalidade.Text = res[0].ToString();
-                }
-                
-                res.Close();
+                cbModalidade.Items.Add(updateDataReader.GetString("descricaoModalidade"));
             }
+            updateDataReader.Close();
             DAO_Connection.con.Close();
         }
 
         private void cbModalidade_SelectedValueChanged(object sender, EventArgs e)
         {
-            DAO_Connection.con.Open();
-            MySqlCommand selectModalidade = new MySqlCommand("Select * from Estudio_Modalidade where descricaoModalidade='" + cbModalidade.Text + "'", DAO_Connection.con);
-            using (MySqlDataReader resModalidade = selectModalidade.ExecuteReader())
-            {
-                resModalidade.Read();
-
-                txtPreco.Text = "";
-                txtQtdAlunos.Text = "";
-                txtQtdAulas.Text = "";
-                txtPreco.Text = resModalidade.GetString("precoModalidade").ToString();
-                txtQtdAlunos.Text = resModalidade.GetString("qtdAlunos").ToString();
-                txtQtdAulas.Text = resModalidade.GetString("qtdAulas").ToString();
-
-                resModalidade.Close();
-            }
-            DAO_Connection.con.Close();
-        }
-
-        private void FRMAtualizarModalidade_FormClosed(object sender, FormClosedEventArgs e)
-        {
             try
             {
-                DAO_Connection.con.Close();
+                DAO_Connection.con.Open();
+                MySqlCommand selectModalidade = new MySqlCommand("select * from Estudio_Modalidade where descricaoModalidade like '" + cbModalidade.Text + "'", DAO_Connection.con);
 
-            } catch (Exception ex)
-            {
-                Console.WriteLine("Conexão já fechada... " + ex.ToString());
+                MySqlDataReader fillModalidadeInfo = selectModalidade.ExecuteReader();
+                fillModalidadeInfo.Read();
+                txtPreco.Text = fillModalidadeInfo.GetString("precoModalidade").ToString();
+                txtQtdAlunos.Text = fillModalidadeInfo.GetString("qtdAlunos").ToString();
+                txtQtdAulas.Text = fillModalidadeInfo.GetString("qtdAulas").ToString();
+
+                fillModalidadeInfo.Close();
             }
-            
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Erro...");
+            }
+            finally
+            {
+                DAO_Connection.con.Close();
+            }
+        }
+
+        private void btnAtualizarModal_Click(object sender, EventArgs e)
+        {
+            Modalidade updatedModal = new Modalidade(cbModalidade.SelectedItem.ToString(), Convert.ToDouble(txtPreco.Text), Convert.ToInt32(txtQtdAlunos.Text), Convert.ToInt32(txtQtdAulas.Text));
+
+            if (updatedModal.AtualizarModalidade())
+            {
+                MessageBox.Show("modalidade atualizada");
+            }
+            else
+            {
+                MessageBox.Show("modalidade não atualizada");
+            }
         }
     }
 }

@@ -43,6 +43,7 @@ namespace ProjetoEstudio.view
                 cbModalidade.Items.Add(res.GetString("descricaoModalidade"));
                 cbModalidade.Text = res[0].ToString();
             }
+            res.Close();
             DAO_Connection.con.Close();
         }
         private void button1_Click(object sender, EventArgs e)

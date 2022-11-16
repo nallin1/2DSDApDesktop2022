@@ -35,6 +35,7 @@ namespace ProjetoEstudio
             this.cadastrarModalidadeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarAlunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirAlunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,8 @@ namespace ProjetoEstudio
             this.btnlogar = new System.Windows.Forms.Button();
             this.lblsenha = new System.Windows.Forms.Label();
             this.lbllogin = new System.Windows.Forms.Label();
-            this.atualizarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpLogin.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +67,7 @@ namespace ProjetoEstudio
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modalidadeToolStripMenuItem,
+            this.turmaToolStripMenuItem,
             this.alunoToolStripMenuItem,
             this.senhaToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
@@ -102,6 +105,13 @@ namespace ProjetoEstudio
             this.consultarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.consultarModalidadeToolStripMenuItem.Text = "Consultar Modalidade";
             this.consultarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.consultarModalidadeToolStripMenuItem_Click);
+            // 
+            // atualizarModalidadeToolStripMenuItem
+            // 
+            this.atualizarModalidadeToolStripMenuItem.Name = "atualizarModalidadeToolStripMenuItem";
+            this.atualizarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.atualizarModalidadeToolStripMenuItem.Text = "Atualizar Modalidade";
+            this.atualizarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.atualizarModalidadeToolStripMenuItem_Click);
             // 
             // alunoToolStripMenuItem
             // 
@@ -195,12 +205,20 @@ namespace ProjetoEstudio
             this.lbllogin.TabIndex = 4;
             this.lbllogin.Text = "Login:";
             // 
-            // atualizarModalidadeToolStripMenuItem
+            // turmaToolStripMenuItem
             // 
-            this.atualizarModalidadeToolStripMenuItem.Name = "atualizarModalidadeToolStripMenuItem";
-            this.atualizarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.atualizarModalidadeToolStripMenuItem.Text = "Atualizar Modalidade";
-            this.atualizarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.atualizarModalidadeToolStripMenuItem_Click);
+            this.turmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarTurmaToolStripMenuItem});
+            this.turmaToolStripMenuItem.Name = "turmaToolStripMenuItem";
+            this.turmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turmaToolStripMenuItem.Text = "Turma";
+            // 
+            // cadastrarTurmaToolStripMenuItem
+            // 
+            this.cadastrarTurmaToolStripMenuItem.Name = "cadastrarTurmaToolStripMenuItem";
+            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarTurmaToolStripMenuItem.Text = "Cadastrar Turma";
+            this.cadastrarTurmaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarTurmaToolStripMenuItem_Click);
             // 
             // FRMLoginEstudio
             // 
@@ -242,6 +260,8 @@ namespace ProjetoEstudio
         private System.Windows.Forms.ToolStripMenuItem excluirAlunoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atualizarModalidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarTurmaToolStripMenuItem;
     }
 }
 

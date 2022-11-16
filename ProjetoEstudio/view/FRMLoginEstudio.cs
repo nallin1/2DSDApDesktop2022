@@ -106,5 +106,11 @@ namespace ProjetoEstudio
             atualizarModalidade.WindowState = FormWindowState.Maximized;
             atualizarModalidade.Show();
         }
+
+        private void cadastrarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMCadastroTurma cadastrarTurma = new FRMCadastroTurma();
+            cadastrarTurma.Show();
+        }
     }
 }

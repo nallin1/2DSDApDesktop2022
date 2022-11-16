@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\Aluno.cs" />
+    <Compile Include="model\Turma.cs" />
     <Compile Include="view\FRMAtualizarModalidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +68,12 @@
     </Compile>
     <Compile Include="view\FRMCadastroModalidade.Designer.cs">
       <DependentUpon>FRMCadastroModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FRMCadastroTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FRMCadastroTurma.Designer.cs">
+      <DependentUpon>FRMCadastroTurma.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FRMCadastroUsuario.cs">
       <SubType>Form</SubType>
@@ -110,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\FRMCadastroModalidade.resx">
       <DependentUpon>FRMCadastroModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FRMCadastroTurma.resx">
+      <DependentUpon>FRMCadastroTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FRMCadastroUsuario.resx">
       <DependentUpon>FRMCadastroUsuario.cs</DependentUpon>

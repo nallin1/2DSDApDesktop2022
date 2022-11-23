@@ -34,6 +34,8 @@ namespace ProjetoEstudio.view
 
         public void populateCBoxModalidades()
         {
+
+
             DAO_Connection.con.Open();
             MySqlCommand selectDesc = new MySqlCommand("Select descricaoModalidade from Estudio_Modalidade where ativa=1", DAO_Connection.con);
             MySqlDataReader res = selectDesc.ExecuteReader();
@@ -62,6 +64,11 @@ namespace ProjetoEstudio.view
         private void FRMExcluirModalidade_FormClosing(object sender, FormClosingEventArgs e)
         {
             DAO_Connection.con.Close();
+        }
+
+        private void cbModalidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

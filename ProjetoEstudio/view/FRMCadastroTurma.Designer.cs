@@ -30,17 +30,17 @@ namespace ProjetoEstudio.view
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtIdModalidade = new System.Windows.Forms.TextBox();
-            this.txtProfessor = new System.Windows.Forms.TextBox();
-            this.txtDiaSemana = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.mskHora = new System.Windows.Forms.MaskedTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mskHora = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtDiaSemana = new System.Windows.Forms.TextBox();
+            this.txtProfessor = new System.Windows.Forms.TextBox();
+            this.txtDescModalidade = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@ namespace ProjetoEstudio.view
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtDiaSemana);
             this.groupBox1.Controls.Add(this.txtProfessor);
-            this.groupBox1.Controls.Add(this.txtIdModalidade);
+            this.groupBox1.Controls.Add(this.txtDescModalidade);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -65,66 +65,30 @@ namespace ProjetoEstudio.view
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar Turma";
             // 
-            // label1
+            // mskHora
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Modalidade:";
+            this.mskHora.HideSelection = false;
+            this.mskHora.Location = new System.Drawing.Point(174, 175);
+            this.mskHora.Mask = "00:00";
+            this.mskHora.Name = "mskHora";
+            this.mskHora.Size = new System.Drawing.Size(277, 26);
+            this.mskHora.TabIndex = 3;
             // 
-            // label2
+            // dataGridView1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Professor:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Modalidade});
+            this.dataGridView1.Location = new System.Drawing.Point(28, 281);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(423, 193);
+            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // label3
+            // Modalidade
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Dia da Semana:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(116, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Hora:";
-            // 
-            // txtIdModalidade
-            // 
-            this.txtIdModalidade.Location = new System.Drawing.Point(173, 50);
-            this.txtIdModalidade.Name = "txtIdModalidade";
-            this.txtIdModalidade.Size = new System.Drawing.Size(278, 26);
-            this.txtIdModalidade.TabIndex = 0;
-            this.txtIdModalidade.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtProfessor
-            // 
-            this.txtProfessor.Location = new System.Drawing.Point(173, 91);
-            this.txtProfessor.Name = "txtProfessor";
-            this.txtProfessor.Size = new System.Drawing.Size(278, 26);
-            this.txtProfessor.TabIndex = 1;
-            this.txtProfessor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtDiaSemana
-            // 
-            this.txtDiaSemana.Location = new System.Drawing.Point(173, 132);
-            this.txtDiaSemana.Name = "txtDiaSemana";
-            this.txtDiaSemana.Size = new System.Drawing.Size(278, 26);
-            this.txtDiaSemana.TabIndex = 2;
-            this.txtDiaSemana.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.Modalidade.HeaderText = "Modalidade";
+            this.Modalidade.Name = "Modalidade";
             // 
             // button1
             // 
@@ -138,29 +102,66 @@ namespace ProjetoEstudio.view
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // txtDiaSemana
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Modalidade});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 281);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(423, 193);
-            this.dataGridView1.TabIndex = 6;
+            this.txtDiaSemana.Location = new System.Drawing.Point(173, 132);
+            this.txtDiaSemana.Name = "txtDiaSemana";
+            this.txtDiaSemana.Size = new System.Drawing.Size(278, 26);
+            this.txtDiaSemana.TabIndex = 2;
+            this.txtDiaSemana.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Modalidade
+            // txtProfessor
             // 
-            this.Modalidade.HeaderText = "Modalidade";
-            this.Modalidade.Name = "Modalidade";
+            this.txtProfessor.Location = new System.Drawing.Point(173, 91);
+            this.txtProfessor.Name = "txtProfessor";
+            this.txtProfessor.Size = new System.Drawing.Size(278, 26);
+            this.txtProfessor.TabIndex = 1;
+            this.txtProfessor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // mskHora
+            // txtDescModalidade
             // 
-            this.mskHora.HideSelection = false;
-            this.mskHora.Location = new System.Drawing.Point(174, 175);
-            this.mskHora.Mask = "00:00";
-            this.mskHora.Name = "mskHora";
-            this.mskHora.Size = new System.Drawing.Size(277, 26);
-            this.mskHora.TabIndex = 3;
+            this.txtDescModalidade.Location = new System.Drawing.Point(173, 50);
+            this.txtDescModalidade.Name = "txtDescModalidade";
+            this.txtDescModalidade.Size = new System.Drawing.Size(278, 26);
+            this.txtDescModalidade.TabIndex = 0;
+            this.txtDescModalidade.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(116, 176);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Hora:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 135);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Dia da Semana:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(80, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Professor:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(68, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Modalidade:";
             // 
             // FRMCadastroTurma
             // 
@@ -182,7 +183,7 @@ namespace ProjetoEstudio.view
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIdModalidade;
+        private System.Windows.Forms.TextBox txtDescModalidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDiaSemana;

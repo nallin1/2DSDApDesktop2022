@@ -30,9 +30,9 @@ namespace ProjetoEstudio.view
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbModalidade = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbModalidade = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,14 +49,16 @@ namespace ProjetoEstudio.view
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ExcluirModalidade";
             // 
-            // cbModalidade
+            // button1
             // 
-            this.cbModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cbModalidade.FormattingEnabled = true;
-            this.cbModalidade.Location = new System.Drawing.Point(148, 68);
-            this.cbModalidade.Name = "cbModalidade";
-            this.cbModalidade.Size = new System.Drawing.Size(486, 28);
-            this.cbModalidade.TabIndex = 0;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button1.Location = new System.Drawing.Point(44, 112);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(590, 37);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Excluir Modalidade";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -69,16 +71,15 @@ namespace ProjetoEstudio.view
             this.label1.Text = "Descrição:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // cbModalidade
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(44, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(590, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Excluir Modalidade";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.cbModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cbModalidade.FormattingEnabled = true;
+            this.cbModalidade.Location = new System.Drawing.Point(148, 68);
+            this.cbModalidade.Name = "cbModalidade";
+            this.cbModalidade.Size = new System.Drawing.Size(486, 28);
+            this.cbModalidade.TabIndex = 0;
+            this.cbModalidade.SelectedIndexChanged += new System.EventHandler(this.cbModalidade_SelectedIndexChanged);
             // 
             // FRMExcluirModalidade
             // 

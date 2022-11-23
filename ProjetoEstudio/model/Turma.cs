@@ -14,6 +14,7 @@ namespace ProjetoEstudio.model
         private string hora;
         private int modalidade;
 
+
         public Turma(string professor, string dia_semana, string hora, int modalidade)
         {
             this.professor = professor;
@@ -31,6 +32,13 @@ namespace ProjetoEstudio.model
         {
             this.dia_semana = dia_semana;;
             this.modalidade = modalidade;
+        }
+
+        public Turma(int idModalidade, string diaSemana, string hora)
+        {
+            this.modalidade = idModalidade;
+            this.dia_semana = diaSemana;
+            this.hora = hora;
         }
 
         public string Professor { get => professor; set => professor = value; }
@@ -66,6 +74,27 @@ namespace ProjetoEstudio.model
             }
 
             return checkCadTurma;
+        }
+
+        public bool excluirTurma()
+        {
+            bool checkExcTurma = false;
+
+            try
+            {
+                DAO_Connection.con.Open();
+                MySqlCommand excTurma = new MySqlCommand("DELETE FROM Estudio_Turma WHERE idModalidade = " + Modalidade + ", diaSemana='" + Dia_semana + "' horaAula='" + Hora + "'", DAO_Connection.con);
+                excTurma.ExecuteNonQuery();
+                checkExcTurma = true;
+            } catch (MySqlException ex)
+            {
+                Console.WriteLine("Erro\n\n" + ex.ToString());
+            } finally
+            {
+                DAO_Connection.con.Close();
+            }
+
+            return checkExcTurma;
         }
     }
 }

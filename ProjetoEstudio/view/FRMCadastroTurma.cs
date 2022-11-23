@@ -32,7 +32,17 @@ namespace ProjetoEstudio.view
         // public Turma(string professor, string dia_semana, string hora, int modalidade)
         private void button1_Click(object sender, EventArgs e)
         {
-            Turma turmaCadastrar = new Turma(txtProfessor.Text.ToString(), txtDiaSemana.Text.ToString(), mskHora.Text.ToString(), Convert.ToInt32(txtIdModalidade.Text));
+            DAO_Connection.con.Open();
+
+            MySqlCommand DescModalidadeToIDModalidade = new MySqlCommand("SELECT idEstudio_Modalidade from Estudio_Modalidade WHERE descricaoModalidade like '" + txtDescModalidade.Text.ToString() + "'", DAO_Connection.con);
+            MySqlDataReader idModalidadeReader = DescModalidadeToIDModalidade.ExecuteReader();
+            idModalidadeReader.Read();
+            int idModalidade = Convert.ToInt32(idModalidadeReader["idEstudio_Modalidade"]);
+
+            DAO_Connection.con.Close();
+            idModalidadeReader.Close();
+
+            Turma turmaCadastrar = new Turma(txtProfessor.Text.ToString(), txtDiaSemana.Text.ToString(), mskHora.Text.ToString(), idModalidade);
 
             if (turmaCadastrar.cadastrarTurma())
             {
@@ -42,13 +52,14 @@ namespace ProjetoEstudio.view
             {
                 MessageBox.Show("Erro ao cadastrar turma !");
             }
+            DAO_Connection.con.Close();
+            idModalidadeReader.Close();
         }
 
         private void populateGridViewModalidade()
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            Modalidade gridModalidade = new Modalidade();
             DAO_Connection.con.Open();
             MySqlCommand consultaModalidadeQuery = new MySqlCommand("SELECT descricaoModalidade from Estudio_Modalidade", DAO_Connection.con);
             MySqlDataReader resModalidade = consultaModalidadeQuery.ExecuteReader();
@@ -57,6 +68,22 @@ namespace ProjetoEstudio.view
             {
                 dataGridView1.Rows.Add(resModalidade["descricaoModalidade"].ToString());
             }
+            resModalidade.Close();
+            DAO_Connection.con.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtDescModalidade.Clear();
+
+            DAO_Connection.con.Open();
+            MySqlCommand getDescModalidade = new MySqlCommand("SELECT descricaoModalidade FROM Estudio_Modalidade WHERE descricaoModalidade like '" + dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + "'", DAO_Connection.con);
+            MySqlDataReader resDescModalidade = getDescModalidade.ExecuteReader();
+            resDescModalidade.Read();
+            txtDescModalidade.Text = resDescModalidade["descricaoModalidade"].ToString();
+
+            DAO_Connection.con.Close();
+            resDescModalidade.Close();
         }
     }
 }

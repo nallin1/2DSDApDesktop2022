@@ -100,6 +100,12 @@
     <Compile Include="view\FRMExcluirModalidade.Designer.cs">
       <DependentUpon>FRMExcluirModalidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FRMExcluirTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FRMExcluirTurma.Designer.cs">
+      <DependentUpon>FRMExcluirTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FRMLoginEstudio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\FRMExcluirModalidade.resx">
       <DependentUpon>FRMExcluirModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FRMExcluirTurma.resx">
+      <DependentUpon>FRMExcluirTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FRMLoginEstudio.resx">
       <DependentUpon>FRMLoginEstudio.cs</DependentUpon>

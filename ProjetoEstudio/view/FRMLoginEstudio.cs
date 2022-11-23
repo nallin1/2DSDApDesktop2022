@@ -112,5 +112,11 @@ namespace ProjetoEstudio
             FRMCadastroTurma cadastrarTurma = new FRMCadastroTurma();
             cadastrarTurma.Show();
         }
+
+        private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMExcluirTurma excluirTurma = new FRMExcluirTurma();
+            excluirTurma.Show();
+        }
     }
 }
